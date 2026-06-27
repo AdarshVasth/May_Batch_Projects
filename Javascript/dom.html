@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1 id="head">
+            This is heading.
+        </h1>
+    </div>
+    <h2 class="heading2">
+        This is heading 2.
+    </h2>
+
+    <img src="pic_bulboff.gif" alt="Trulli" width="300" height="333" id="bulb">
+
+    <script>
+        let heading = document.getElementById("head");
+        console.log(heading.style);
+        let heading2 = document.getElementsByClassName("heading2");
+        console.log(heading2[0].innerText);
+        heading.innerText = "This is bigger heading.";
+        console.log(heading.innerText);
+
+        heading.style.color = "red";
+        heading.style.backgroundColor = "yellow";
+
+        let bulb = document.getElementById("bulb");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning about events</title>
+</head>
+<body>
+    <img src="pic_bulboff.gif" alt="Trulli" width="300" height="333" id="bulb"><br>
+    <button id="btn" onclick="switchOnOrOff()">Switch On</button><br><br>
+
+    <input type="text" id="input" placeholder="Type something...">
+
+    <p id="output">Output : </p>
+    <script>
+        function switchOnOrOff() {
+            let bulb = document.getElementById("bulb");
+            let btn = document.getElementById("btn");
+
+            if (bulb.src.match("pic_bulboff.gif")) {
+                bulb.src = "pic_bulbon.gif";
+                btn.innerText = "Switch Off";
+            } else {
+                bulb.src = "pic_bulboff.gif";
+                btn.innerText = "Switch On";
+            }
+        }
+
+        btn.addEventListener("mouseover", function() {
+            btn.style.backgroundColor = "yellow";
+        });
+
+        btn.addEventListener("mouseout", function() {
+            btn.style.backgroundColor = "";
+        });
+
+        input.addEventListener("keydown", function(event) {
+            console.log(event.key);
+            if(event.key === "Enter") {
+                switchOnOrOff();
+            }
+            let output = document.getElementById("output");
+            output.innerText = output.innerText + event.key;
+        });
+
+        //Common Mouse Events
+        // click, mouseover, mouseout, mousedown, mouseup, mousemove
+
+        //Keyboard Events
+        // keydown, keyup, keypress
+    </script>
+    
+</body>
+</html>
